@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Combate el Hambre</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f4ec;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, button {
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .info-donar {
+      background: #fff8e1;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .info-donar h2 {
+      color: #4caf50;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #eee;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Combate el Hambre</h1>
+    <p>Dona comida, salva vidas.</p>
+  </header>
+
+  <main>
+    <section class="formulario">
+      <h2>Registrar Donación</h2>
+      <form id="donacionForm">
+        <input type="text" id="nombre" placeholder="Tu nombre" required>
+        <input type="text" id="comida" placeholder="Tipo de comida" required>
+        <input type="number" id="cantidad" placeholder="Cantidad (kg o unidades)" required>
+        <button type="submit">Donar</button>
+      </form>
+    </section>
+
+    <section class="info-donar">
+      <h2>¿Por qué es importante donar alimentos?</h2>
+      <p>
+        Donar alimentos ayuda a combatir la desnutrición, reducir el desperdicio de comida y apoyar a las personas más vulnerables de nuestras comunidades.
+        Con tu ayuda, podemos brindar esperanza y nutrición a quienes más lo necesitan.
+      </p>
+
+      <div class="galeria">
+        <img src="https://cdn.pixabay.com/photo/2017/01/20/15/06/help-1990004_960_720.jpg" alt="Persona recibiendo alimentos">
+        <img src="https://cdn.pixabay.com/photo/2017/06/02/18/24/donation-2362343_960_720.jpg" alt="Cajas de donación de comida">
+        <img src="https://cdn.pixabay.com/photo/2020/06/10/13/28/food-5282438_960_720.jpg" alt="Voluntarios donando comida">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    App Contra el Hambre
+  </footer>
+
+  <script>
+    document.getElementById("donacionForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const comida = document.getElementById("comida").value;
+      const cantidad = document.getElementById("cantidad").value;
+
+      alert(`Gracias ${nombre} por donar ${cantidad} de ${comida}. ¡Tu ayuda es muy valiosa!`);
+      this.reset();
+    });
+  </script>
+</body>
+</html>
